@@ -164,7 +164,7 @@ class ProgramSynthesizerTyped(ProgramSynthesizer):
 
             prog_new.depth += 1
 
-            if prod.function_name is 'select':
+            if prod.function_name == 'select':
 
                 if prog_new.depth >= self.depth:
                     printd("depth pruned")
@@ -205,7 +205,7 @@ class ProgramSynthesizerTyped(ProgramSynthesizer):
                             print("add lemma:", compatibility_check_res.lemma)
                             self.add_lemmas(compatibility_check_res)
 
-            elif prod.function_name is 'summarize' or prod.function_name is 'bin':
+            elif prod.function_name == 'summarize' or prod.function_name == 'bin':
 
                 assert isinstance(pred, Prov)
 
@@ -221,7 +221,7 @@ class ProgramSynthesizerTyped(ProgramSynthesizer):
                 assert isinstance(prog_var_node_children[1], VariableNode)
                 assert isinstance(prog_var_node_children[2], VariableNode)
 
-                if prod.function_name is 'summarize':
+                if prod.function_name == 'summarize':
                     assert prog_var_node_children[1].sym.name == 'alpha'
                     assert prog_var_node_children[2].sym.name == 'sym_col'
 
@@ -244,7 +244,7 @@ class ProgramSynthesizerTyped(ProgramSynthesizer):
                     else:
                         new_progs.append(prog_new)
 
-                elif prod.function_name is 'bin':
+                elif prod.function_name == 'bin':
                     assert prog_var_node_children[1].sym.name == 'params'
                     assert prog_var_node_children[2].sym.name == 'sym_col'
 

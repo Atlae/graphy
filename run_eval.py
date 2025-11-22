@@ -37,7 +37,7 @@ def run_eval(benchmark_set, eval_engine: EvalEngine, eval_dataset: str, parsing_
     benchmarks = read_csv_to_dict(eval_engine.get_benchmark_path(benchmark_set))
 
     if eval_dataset == 'cars':
-        held_out_test_benchmarks = convert_list_data_to_dict_data(read_csv_to_dict('eval/datavis/test_held_out.txt'), 'id')
+        held_out_test_benchmarks = convert_list_data_to_dict_data(read_csv_to_dict('eval/datavis/test_cars.txt'), 'id')
     elif eval_dataset == 'superstore':
         held_out_test_benchmarks = convert_list_data_to_dict_data(read_csv_to_dict('eval/datavis/test_superstore.txt'), 'id')
     elif eval_dataset == 'movies':

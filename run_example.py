@@ -21,7 +21,7 @@ class UserQueryHandler:
 
     def __init__(self):
 
-        os.chdir("datavis")
+        os.chdir("eval/datavis")
 
         if torch.cuda.is_available() and args.gpu is not None:
             args.device = torch.device(('cuda:' + args.gpu))
@@ -41,7 +41,7 @@ class UserQueryHandler:
 
     def run_user_query_benchmark(self, query, dataset_name):
 
-        os.chdir("datavis")
+        os.chdir("eval/datavis")
         benchmark_set = "chi21"
         eval_engine = EvalSynth()
         benchmarks = read_csv_to_dict(eval_engine.get_benchmark_path(benchmark_set))
@@ -58,7 +58,7 @@ class UserQueryHandler:
 
     def run_user_query(self, query, k):
 
-        os.chdir("datavis")
+        os.chdir("eval/datavis")
 
         self.benchmark.nl = query
         self.benchmark.bname = "user-" + str(self.counter)

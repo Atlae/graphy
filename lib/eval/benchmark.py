@@ -7,7 +7,7 @@ from typing import Dict, Tuple, List, Union, Optional, FrozenSet
 
 from pandas import DataFrame
 
-from lib.trinity.table import Table
+# from lib.trinity.table import Table
 from lib.type.base_type import TableType
 from lib.type.predicate import Prov, RelationPred, Card, Constant, Predicate
 from lib.type.ref_type import BaseRefType
@@ -119,7 +119,7 @@ class Dataset:
 
         # create a dict for cardinality analysis only
         self.cardinality_properties = {}
-        for (columnName, columnData) in self.data_df.iteritems():
+        for (columnName, columnData) in self.data_df.items():
             self.cardinality_properties[frozenset([columnName])] = columnData.nunique()
 
         # every two combination cardinality

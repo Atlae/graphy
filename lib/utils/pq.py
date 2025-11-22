@@ -2,7 +2,7 @@
 my priority queue impl
 """
 import itertools
-from collections import Callable
+from collections.abc import Callable
 from heapq import heappush, heappop
 
 

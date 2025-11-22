@@ -8,7 +8,17 @@ import csv
 import sys
 from typing import Dict, List
 
-csv.field_size_limit(sys.maxsize)
+max_int = sys.maxsize
+while True:
+    # decrease the max_int value by factor 10
+    # as long as the OverflowError occurs.
+    try:
+        csv.field_size_limit(max_int)
+        break
+    except OverflowError:
+        max_int = max_int // 2
+
+# csv.field_size_limit(sys.maxsize)
 
 
 def save_dict_to_csv(path, records):

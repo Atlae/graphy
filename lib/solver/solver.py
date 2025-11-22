@@ -322,7 +322,8 @@ class QuickSolver(Solver):
                     # this means that prov never specify anything, which means it can be true
                     yield atom, atom.predicate
 
-        raise StopIteration
+        # raise StopIteration
+        return
 
 
 class Z3Solver(Solver):

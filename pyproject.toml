@@ -1,0 +1,74 @@
+[project]
+name = "graphy"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Atlae", email = "71896235+Atlae@users.noreply.github.com" }
+]
+dependencies = [
+    "ansunit",
+    # "apex",
+    "asciitree>=0.3.3",
+    "attrs>=20.3.0",
+    "babel>=2.9.0",
+    "black",
+    "click>=7.1.2",
+    "clingo>=5.3.0",
+    "clyngor>=0.3.31",
+    "clyngor-with-clingo",
+    "dataclasses",
+    "dpath",
+    "flask>=1.1.1",
+    "flask-cors",
+    "fuzzywuzzy>=0.18.0",
+    "inflect>=5.3.0",
+    "ipython",
+    "jsonschema>=3.2.0",
+    "levenshtein>=0.12.0",
+    "matplotlib",
+    "mo-future>=2.20",
+    "msgpack>=1.0.2",
+    "mypy",
+    "n2w",
+    "namedlist>=1.8",
+    "nltk>=3.4.5",
+    "numpy>=1.17.0",
+    "pandas>=1.1.5",
+    "pyparsing>=2.3.0",
+    "pytest>=6.2.2",
+    "pytest-cov",
+    "python-Levenshtein>=0.12.0",
+    "pyyaml>=5.4.1",
+    "rapidfuzz>=1.4.1",
+    "records>=0.5.3",
+    "requests>=2.25.1",
+    "revtok>=0.0.3",
+    "scipy>=1.5.4",
+    "setuptools>=52.0.0",
+    "si-prefix>=1.2.2",
+    "spacy",
+    "sqlalchemy>=1.4.3",
+    "tabulate>=0.8.9",
+    "torch",
+    "tqdm",
+    "transformers>=4.2.2",
+    "vega>=3.4.0",
+    "wandb>=0.10.33",
+    "z3-solver",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/graphy"]

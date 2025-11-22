@@ -67,7 +67,10 @@ class NeuralParserOutput(Output):
         enumerate_count = 0
         enumerated_specs = {}
 
-        print("processed_prediction:", self.joint_prob_output)
+        import pprint
+        print("processed_prediction:")
+        pprint.pprint(self.prob_output)
+        # print("processed_prediction:", self.joint_prob_output)
 
         def create_spec(pred, score, spec) -> Union[SpecProg, None]:
             """

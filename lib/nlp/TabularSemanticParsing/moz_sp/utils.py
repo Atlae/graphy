@@ -7,20 +7,20 @@
 import re
 
 
-table_pattern = re.compile('[A-Za-z_]\w+|t')
-alias_pattern = re.compile('([A-Z_]+alias\d)|'
-                           '(T\d)|'
-                           '(t\d)')
-alias_id_pattern = re.compile('\d+')
-alias_id_revtok_pattern = re.compile('\d+ ')
-field_pattern = re.compile('([A-Z_]{1,100}alias\d+\.[A-Za-z_]\w+)|'
-                           '([A-Za-z_]{1,100}\d+\.[A-Za-z_]\w+)|'
-                           '([A-Za-z_]\w+\.[A-Za-z_]\w+)|'
-                           '(T\d\.[A-Za-z_]\w+)|'
-                           '(t\d\.[A-Za-z_]\w+)')
-number_pattern = re.compile('\d+((\.\d+)|(,\d+))?')
-time_pattern = re.compile('(\d{2}:\d{2}:\d{2})|(\d{2}:\d{2})')
-datetime_pattern = re.compile('(\d{4})-(\d{2})-(\d{2})( (\d{2}):(\d{2}):(\d{2}))?')
+table_pattern = re.compile(r'[A-Za-z_]\w+|t')
+alias_pattern = re.compile(r'([A-Z_]+alias\d)|'
+                           r'(T\d)|'
+                           r'(t\d)')
+alias_id_pattern = re.compile(r'\d+')
+alias_id_revtok_pattern = re.compile(r'\d+ ')
+field_pattern = re.compile(r'([A-Z_]{1,100}alias\d+\.[A-Za-z_]\w+)|'
+                           r'([A-Za-z_]{1,100}\d+\.[A-Za-z_]\w+)|'
+                           r'([A-Za-z_]\w+\.[A-Za-z_]\w+)|'
+                           r'(T\d\.[A-Za-z_]\w+)|'
+                           r'(t\d\.[A-Za-z_]\w+)')
+number_pattern = re.compile(r'\d+((\.\d+)|(,\d+))?')
+time_pattern = re.compile(r'(\d{2}:\d{2}:\d{2})|(\d{2}:\d{2})')
+datetime_pattern = re.compile(r'(\d{4})-(\d{2})-(\d{2})( (\d{2}):(\d{2}):(\d{2}))?')
 
 
 DERIVED_TABLE_PREFIX = 'DERIVED_TABLE'

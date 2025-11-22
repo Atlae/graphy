@@ -93,12 +93,16 @@ def get_implication_model(constraint1: CNFFormula, constraint2: XORFormula, forc
 
     if not constraint1.contain_disjunction() and not force_z3:
         # print("quick solver")
+        # print(imp)
         model_generator = quick_solver.get_model(imp)
-
-        while True:
-            next_model = next(model_generator)
-
-            yield next_model
+        try:
+            while True:
+                    next_model = next(model_generator)
+                    # print(next_model)
+                    yield next_model
+                    # yield from model_generator
+        except StopIteration:
+            return
     else:
         # print("z3 solver")
         model_generator = z3_solver.get_model(imp)

@@ -160,7 +160,7 @@ def wikisql_vec_to_struct(v, vocab, memory, token_starts, token_ends, text, tu, 
             return s
         # process dot
         s = s.replace(' . ', '. ')
-        s = re.sub(re.compile(r' \.$'), '\.', s)
+        s = re.sub(re.compile(r' \.$'), r'\.', s)
         i = 0
         t = []
         while i < len(s):
